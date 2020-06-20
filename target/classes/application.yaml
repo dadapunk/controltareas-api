@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@database-1.ckso8qgwz4gu.us-east-2.rds.amazonaws.com:1521:database
+    username: PFT8461
+    password: PFT8461
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+  jpa:
+    hibernate:
+    #      ddl-auto: create-drop
+    #      generate-ddl: true
+    show-sql: true
+
+    properties:
+      hibernate:
+        proc:
+          param_null_passing: true
+
+  server:
+    port: 8083
