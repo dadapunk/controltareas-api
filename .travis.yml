@@ -4,7 +4,6 @@ jdk:
 
 script: ./mvn clean verify
 
-
 notifications:
   email:
     - sebastian.v.a@riseup.net
