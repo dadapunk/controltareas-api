@@ -15,7 +15,7 @@
 	<description>Proyecto demostrativo en Spring Boot para PFT8461-801V</description>
 
 	<properties>
-		<java.version>8</java.version>
+		<java.version>11</java.version>
                 <sonar.analysis.mode>preview</sonar.analysis.mode>
          	<sonar.issuesReport.html.enable>true</sonar.issuesReport.html.enable>
 	</properties>
