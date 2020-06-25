@@ -2,8 +2,7 @@ language: java
 jdk:
   - openjdk11
 
-script:
-  mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V 
+script: ./mvnw clean verify
 
 
 notifications:
