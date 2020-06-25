@@ -3,8 +3,8 @@ jdk:
   - openjdk11
 
 script:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V 
-  - ./mvn clean install
+  mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V 
+
 
 notifications:
   email:
