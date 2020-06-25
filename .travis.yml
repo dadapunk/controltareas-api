@@ -1,1 +1,10 @@
 language: java
+jdk:
+  - openjdk11
+
+script: ./mvn clean install
+
+notifications:
+  email:
+    - sebastian.v.a@riseup.net
+    
