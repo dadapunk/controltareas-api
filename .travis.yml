@@ -2,11 +2,9 @@ language: java
 jdk:
   - openjdk11
 before_install:
- - chmod +x mvnw
+ - chmod +x mvn
 
 script: ./mvn clean verify
 
-notifications:
-  email:
-    - sebastian.v.a@riseup.net
+
     
