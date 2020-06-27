@@ -1,8 +1,7 @@
 language: java
+sudo: true
 jdk:
   - openjdk11
-
+before_install:
+  - chmod +x mvnw
 script: ./mvn clean verify
-
-
-    
