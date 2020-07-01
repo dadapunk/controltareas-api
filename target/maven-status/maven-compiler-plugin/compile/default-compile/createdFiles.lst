@@ -21,6 +21,7 @@ com/ProcessSA/ControlTareas/modelo/Proceso.class
 com/ProcessSA/ControlTareas/repositorio/RepositorioContrato.class
 com/ProcessSA/ControlTareas/servicio/ServicioUsuario.class
 com/ProcessSA/ControlTareas/modelo/AsignacionPK.class
+com/ProcessSA/ControlTareas/modelo/DataResponse.class
 com/ProcessSA/ControlTareas/repositorio/RepositorioProceso.class
 com/ProcessSA/ControlTareas/controlador/ControladorAsignacion.class
 com/ProcessSA/ControlTareas/controlador/ControladorAdministrador.class

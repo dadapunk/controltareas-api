@@ -1,6 +1,11 @@
 package com.ProcessSA.ControlTareas.repositorio;
 
 import com.ProcessSA.ControlTareas.modelo.Persona;
+import com.ProcessSA.ControlTareas.modelo.DataResponse;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import org.json.JSONArray;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
@@ -21,6 +26,7 @@ import java.util.List;
  * Clase para definir las operaciones de BD relacionadas con PERSONA
  */
 @Repository
+
 public class RepositorioPersona {
 
     private final EntityManager gestorDeEntidad;
@@ -36,7 +42,7 @@ public class RepositorioPersona {
      *
      * @return
      */
-    public ArrayList spGetPersonas() {
+    public DataResponse spGetPersonas() {
         StoredProcedureQuery consultaProcedimiento = gestorDeEntidad.createStoredProcedureQuery("SP_GET_PERSONAS");
         // Registrar los parámetros de salida
         consultaProcedimiento.registerStoredProcedureParameter("OUT_GLOSA", String.class, ParameterMode.OUT);
@@ -47,13 +53,16 @@ public class RepositorioPersona {
         // Obtener los valores de salida
         String glosa = (String) consultaProcedimiento.getOutputParameterValue("OUT_GLOSA");
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
-        List<?> personas = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_PERSONAS"));
+        List<Persona> personas = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_PERSONAS"));
         // Encapsular los resultados
-        ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
-        personas.forEach(persona -> respuesta.add(persona));
-        return respuesta;
+        ArrayList data = new ArrayList<>();
+        DataResponse response = new DataResponse();
+        response.setGlosa(glosa);
+        response.setCodigo(estado);
+        response.setData(data);
+        personas.forEach(persona -> data.add(persona));
+        return response;
+
     }
 
     /**

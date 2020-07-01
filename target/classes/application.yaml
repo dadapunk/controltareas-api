@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:oracle:thin:@database-1.ckso8qgwz4gu.us-east-2.rds.amazonaws.com:1521:database
-    username: PFT8461
-    password: PFT8461
+    url: jdbc:oracle:thin:@34.95.129.4:1521:xe
+    username: PFT8462
+    password: PFT8462
     driver-class-name: oracle.jdbc.driver.OracleDriver
 
   jpa:

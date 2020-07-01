@@ -1,6 +1,9 @@
 package com.ProcessSA.ControlTareas.controlador;
 
 import com.ProcessSA.ControlTareas.servicio.ServicioPersona;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -31,8 +34,10 @@ public class ControladorPersona {
             @ApiResponse(code = 201, message = "Personas encontradas correctamente"),
             @ApiResponse(code = 404, message = "Personas no encontradas")
     })
+
     public ResponseEntity<?> obtenerListaPersonas() {
         return ResponseEntity.ok(this.servicio.obtenerPersonas());
+
     }
 
     @PostMapping("/ingresar")

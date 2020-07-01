@@ -1,5 +1,6 @@
 package com.ProcessSA.ControlTareas.modelo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import javax.persistence.*;
 import java.sql.Date;
@@ -11,6 +12,7 @@ import java.util.Collection;
 @Entity
 @Table(name = "PERSONA")
 @Data
+
 public class Persona {
     @Id
     @Column(name = "rut")

@@ -1,11 +1,15 @@
 package com.ProcessSA.ControlTareas.servicio;
 
+import com.ProcessSA.ControlTareas.modelo.DataResponse;
 import com.ProcessSA.ControlTareas.repositorio.RepositorioPersona;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.sql.Date;
+import java.util.List;
 
 /**
  * Clase para definir los servicio asociados a Persona
@@ -25,10 +29,18 @@ public class ServicioPersona {
      *
      * @return
      */
-    public ArrayList obtenerPersonas() {
+    public DataResponse obtenerPersonas() {
         return repositorio.spGetPersonas();
 
     }
+//    public DataResponse obtenerPersonas() {
+//        List<Data> results = repositorio.spGetPersonas();
+//        DataResponse response = new DataResponse();
+////        response.getGlosa(repositorio.spGetPersonas().);
+////        response.setCodigo();
+//        response.setData(results);
+//        return response;
+//    }
 
     /**
      * Ingresa o actualiza un registro de Persona
