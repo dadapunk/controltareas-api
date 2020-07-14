@@ -42,7 +42,7 @@ public class RepositorioPersona {
      *
      * @return
      */
-    public DataResponse spGetPersonas() {
+    public ArrayList spGetPersonas() {
         StoredProcedureQuery consultaProcedimiento = gestorDeEntidad.createStoredProcedureQuery("SP_GET_PERSONAS");
         // Registrar los parámetros de salida
         consultaProcedimiento.registerStoredProcedureParameter("OUT_GLOSA", String.class, ParameterMode.OUT);
@@ -56,12 +56,12 @@ public class RepositorioPersona {
         List<Persona> personas = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_PERSONAS"));
         // Encapsular los resultados
         ArrayList data = new ArrayList<>();
-        DataResponse response = new DataResponse();
-        response.setGlosa(glosa);
-        response.setCodigo(estado);
-        response.setData(data);
+        //DataResponse response = new DataResponse();
+        //response.setGlosa(glosa);
+        //response.setCodigo(estado);
+        //response.setData(data);
         personas.forEach(persona -> data.add(persona));
-        return response;
+        return data;
 
     }
 
@@ -133,8 +133,8 @@ public class RepositorioPersona {
         List<?> persona = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_PERSONA"));
         // Encapsular los los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+        //respuesta.add(glosa);
+        //respuesta.add(estado);
         respuesta.addAll(persona);
         return respuesta;
     }
@@ -161,8 +161,8 @@ public class RepositorioPersona {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+       // respuesta.add(glosa);
+        //respuesta.add(estado);
         return respuesta;
     }
 
@@ -200,8 +200,8 @@ public class RepositorioPersona {
         Object rutSalida = consultaProcedimiento.getOutputParameterValue("OUT_ID_SALIDA");
         // Encapsular resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+      //  respuesta.add(glosa);
+      //  respuesta.add(estado);
         respuesta.add(rutSalida);
         return respuesta;
     }

@@ -48,8 +48,8 @@ public class RepositorioUnidadInterna {
         List<?> Uinternas = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_ALL_UI"));
         // Encapsular los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+       // respuesta.add(glosa);
+        // respuesta.add(estado);
         Uinternas.forEach(Uinterna -> respuesta.add(Uinterna));
         return respuesta;
     }
@@ -107,8 +107,8 @@ public class RepositorioUnidadInterna {
         List<?> unidadInterna = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_UI"));
         // Encapsular los los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+      //  respuesta.add(glosa);
+       // respuesta.add(estado);
         respuesta.addAll(unidadInterna);
         return respuesta;
     }
@@ -135,8 +135,8 @@ public class RepositorioUnidadInterna {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         return respuesta;
     }
 
@@ -171,8 +171,8 @@ public class RepositorioUnidadInterna {
         Object codigoSalida = consultaProcedimiento.getOutputParameterValue("OUT_COD_SALIDA");
         // Encapsular resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+      //  respuesta.add(estado);
         respuesta.add(codigoSalida);
         return respuesta;
     }

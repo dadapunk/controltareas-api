@@ -48,8 +48,8 @@ public class RepositorioFuncionario {
         List<?> funcionarios = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_FUNCIONARIOS"));
         // Encapsular los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+      //  respuesta.add(estado);
         funcionarios.forEach(funcionario -> respuesta.add(funcionario));
         return respuesta;
     }
@@ -73,7 +73,7 @@ public class RepositorioFuncionario {
                         (Usuario) new RepositorioUsuario(this.gestorDeEntidad)
                                 .spGetUsuario(
                                         rs.getLong("id")
-                                ).get(2)
+                                ).get(0)
                 );
                 entidad.setCreado(rs.getDate("creado"));
                 lista.add(entidad);
@@ -111,8 +111,8 @@ public class RepositorioFuncionario {
         List<?> funcionario = this.obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_FUNCIONARIO"));
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         respuesta.addAll(funcionario);
         return respuesta;
     }
@@ -142,8 +142,8 @@ public class RepositorioFuncionario {
         Long codigoSalida = (Long) consultaProcedimiento.getOutputParameterValue("OUT_ID_SALIDA");
         // Encapsular resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         respuesta.add(codigoSalida);
         return respuesta;
     }
@@ -170,8 +170,8 @@ public class RepositorioFuncionario {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+      //  respuesta.add(glosa);
+        // respuesta.add(estado);
         return respuesta;
     }
 

@@ -49,8 +49,8 @@ public class RepositorioUsuario {
         List<?> usuarios = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_USUARIOS"));
         // Encapsular los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+    //    respuesta.add(glosa);
+     //   respuesta.add(estado);
         usuarios.forEach(usuario -> respuesta.add(usuario));
         return respuesta;
     }
@@ -79,7 +79,7 @@ public class RepositorioUsuario {
                         (Persona) new RepositorioPersona(this.gestorDeEntidad)
                                 .spGetPersona(
                                         rs.getString("rut_PERSONA")
-                                ).get(2)
+                                ).get(0)
                 );
                 entidad.setCreado(rs.getDate("creado"));
                 entidad.setModificado(rs.getDate("modificado"));
@@ -119,8 +119,8 @@ public class RepositorioUsuario {
         List<?> usuario = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_USUARIO"));
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+    //    respuesta.add(glosa);
+      //  respuesta.add(estado);
         respuesta.addAll(usuario);
         return respuesta;
     }
@@ -159,8 +159,8 @@ public class RepositorioUsuario {
         Object codigoSalida = consultaProcedimiento.getOutputParameterValue("OUT_ID_SALIDA");
         // Encapsular resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+    //    respuesta.add(glosa);
+      //  respuesta.add(estado);
         respuesta.add(codigoSalida);
         return respuesta;
     }
@@ -188,8 +188,8 @@ public class RepositorioUsuario {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+      //  respuesta.add(glosa);
+       // respuesta.add(estado);
         return respuesta;
     }
 

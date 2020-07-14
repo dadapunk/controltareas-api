@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.sql.Date;
 import java.util.List;
 
+import com.ProcessSA.ControlTareas.modelo.Persona;
+
 /**
  * Clase para definir los servicio asociados a Persona
  */
@@ -29,7 +31,7 @@ public class ServicioPersona {
      *
      * @return
      */
-    public DataResponse obtenerPersonas() {
+    public ArrayList obtenerPersonas() {
         return repositorio.spGetPersonas();
 
     }

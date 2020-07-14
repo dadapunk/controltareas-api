@@ -49,8 +49,8 @@ public class RepositorioPlazo {
         List<?> plazos = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_PLAZOS"));
         // Encapsular los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+      //  respuesta.add(glosa);
+       // respuesta.add(estado);
         plazos.forEach(plazo -> respuesta.add(plazo));
         return respuesta;
     }
@@ -79,7 +79,7 @@ public class RepositorioPlazo {
                         (Tarea) new RepositorioTarea(this.gestorDeEntidad)
                                 .spGetTarea(
                                         rs.getLong("codigo_TAREA")
-                                ).get(2)
+                                ).get(0)
                 );
                 entidad.setPkPlazo(pkEntidad);
 
@@ -119,8 +119,8 @@ public class RepositorioPlazo {
         List<?> plazo = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_PLAZO"));
         // Encapsular los los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+    //    respuesta.add(glosa);
+      //  respuesta.add(estado);
         respuesta.addAll(plazo);
         return respuesta;
     }
@@ -150,8 +150,8 @@ public class RepositorioPlazo {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         return respuesta;
     }
 
@@ -183,8 +183,8 @@ public class RepositorioPlazo {
         Object codigoSalida = consultaProcedimiento.getOutputParameterValue("OUT_COD_SALIDA");
         // Encapsular resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         respuesta.add(codigoSalida);
         return respuesta;
     }

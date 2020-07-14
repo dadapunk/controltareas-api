@@ -46,8 +46,8 @@ public class RepositorioTarea {
         List<?> tareas = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_TAREAS"));
         // Encapsular los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         tareas.forEach(tarea -> respuesta.add(tarea));
         return respuesta;
     }
@@ -106,8 +106,8 @@ public class RepositorioTarea {
         List<?> tarea = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_TAREA"));
         // Encapsular los los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         respuesta.addAll(tarea);
         return respuesta;
     }
@@ -134,8 +134,8 @@ public class RepositorioTarea {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+      //  respuesta.add(glosa);
+        //respuesta.add(estado);
         return respuesta;
     }
 
@@ -173,8 +173,8 @@ public class RepositorioTarea {
         Object codigoSalida = consultaProcedimiento.getOutputParameterValue("OUT_COD_SALIDA");
         // Encapsular resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+      //  respuesta.add(glosa);
+        //respuesta.add(estado);
         respuesta.add(codigoSalida);
         return respuesta;
     }

@@ -46,8 +46,8 @@ public class RepositorioFuncion {
         List<?> funciones = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_FUNCIONES"));
         // Encapsular los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+      //  respuesta.add(glosa);
+        //respuesta.add(estado);
         funciones.forEach(funcion -> respuesta.add(funcion));
         return respuesta;
     }
@@ -106,8 +106,8 @@ public class RepositorioFuncion {
         List<?> funcion = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_FUNCION"));
         // Encapsular los los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         respuesta.addAll(funcion);
         return respuesta;
     }
@@ -134,8 +134,8 @@ public class RepositorioFuncion {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+      //  respuesta.add(glosa);
+        //respuesta.add(estado);
         return respuesta;
     }
 
@@ -173,8 +173,8 @@ public class RepositorioFuncion {
         Object codigoSalida = consultaProcedimiento.getOutputParameterValue("OUT_COD_SALIDA");
         // Encapsular resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         respuesta.add(codigoSalida);
         return respuesta;
     }

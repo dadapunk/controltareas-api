@@ -50,8 +50,8 @@ public class RepositorioIntegrante {
         List<?> integrantes = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_INTEGRANTES"));
         // Encapsular los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+      //  respuesta.add(estado);
         integrantes.forEach(integrante -> respuesta.add(integrante));
         return respuesta;
     }
@@ -78,7 +78,7 @@ public class RepositorioIntegrante {
                         (Usuario) new RepositorioUsuario(this.gestorDeEntidad)
                                 .spGetUsuario(
                                         rs.getLong("id_USUARIO")
-                                ).get(2)
+                                ).get(0)
                 );
 
 
@@ -86,7 +86,7 @@ public class RepositorioIntegrante {
                         (UnidadInterna) new RepositorioUnidadInterna(this.gestorDeEntidad)
                                 .spGetUi(
                                         rs.getLong("codigo_UI")
-                                ).get(2)
+                                ).get(0)
                 );
 
                 entidad.setPkIntegrante(pkEntidad);
@@ -130,8 +130,8 @@ public class RepositorioIntegrante {
         List<?> integrante = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_INTEGRANTE"));
         // Encapsular los los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+      //  respuesta.add(glosa);
+        // respuesta.add(estado);
         respuesta.addAll(integrante);
         return respuesta;
     }
@@ -162,8 +162,8 @@ public class RepositorioIntegrante {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         return respuesta;
     }
 
@@ -193,8 +193,8 @@ public class RepositorioIntegrante {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+    //    respuesta.add(glosa);
+      //  respuesta.add(estado);
         return respuesta;
     }
 }

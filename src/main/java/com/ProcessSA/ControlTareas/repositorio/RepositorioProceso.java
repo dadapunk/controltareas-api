@@ -47,8 +47,8 @@ public class RepositorioProceso {
         List<?> procesos = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_PROCESOS"));
         // Encapsular los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+      //  respuesta.add(glosa);
+        //respuesta.add(estado);
         procesos.forEach(proceso -> respuesta.add(proceso));
         return respuesta;
     }
@@ -77,18 +77,18 @@ public class RepositorioProceso {
                 entidad.setEstado(rs.getString("estado"));
 
                 fkUI = new RepositorioUnidadInterna(this.gestorDeEntidad).spGetUi(rs.getLong("codigo_UI"));
-                if (fkUI.size() > 2)
-                    entidad.setUnidadInternaFk((UnidadInterna) fkUI.get(2));
+                if (fkUI.size() > 0)
+                    entidad.setUnidadInternaFk((UnidadInterna) fkUI.get(0));
 
                 fkDisennador = new RepositorioDisennador(this.gestorDeEntidad).spGetDisennador(rs.getLong("id_DISENNADOR"));
-                if (fkDisennador.size() > 2)
-                    entidad.setDisennadorFk((Disennador) fkDisennador.get(2));
+                if (fkDisennador.size() > 0)
+                    entidad.setDisennadorFk((Disennador) fkDisennador.get(0));
 
                 entidad.setProyectoFk(
                         (Proyecto) new RepositorioProyecto(this.gestorDeEntidad)
                                 .spGetProyecto(
                                         rs.getLong("codigo_PROYECTO")
-                                ).get(2)
+                                ).get(0)
                 );
 
                 entidad.setCreado(rs.getDate("creado"));
@@ -129,8 +129,8 @@ public class RepositorioProceso {
         List<?> proceso = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_PROCESO"));
         // Encapsular los los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+      //  respuesta.add(glosa);
+        //respuesta.add(estado);
         respuesta.addAll(proceso);
         return respuesta;
     }
@@ -158,8 +158,8 @@ public class RepositorioProceso {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+      //  respuesta.add(glosa);
+        //respuesta.add(estado);
         return respuesta;
     }
 
@@ -209,8 +209,8 @@ public class RepositorioProceso {
         Object codigoSalida = consultaProcedimiento.getOutputParameterValue("OUT_COD_SALIDA");
         // Encapsular resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+    //    respuesta.add(glosa);
+     //   respuesta.add(estado);
         respuesta.add(codigoSalida);
         return respuesta;
     }

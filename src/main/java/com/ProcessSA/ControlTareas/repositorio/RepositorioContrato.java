@@ -46,8 +46,8 @@ public class RepositorioContrato {
         List<?> contratos = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_CONTRATOS"));
         // Encapsular los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+    //    respuesta.add(glosa);
+    //    respuesta.add(estado);
         contratos.forEach(contrato -> respuesta.add(contrato));
         return respuesta;
     }
@@ -78,7 +78,7 @@ public class RepositorioContrato {
                         (Empresa) new RepositorioEmpresa(this.gestorDeEntidad)
                                 .spGetEmpresa(
                                         rs.getString("rut_EMPRESA")
-                                ).get(2)
+                                ).get(0)
                 );
 
 
@@ -86,7 +86,7 @@ public class RepositorioContrato {
                         (Persona) new RepositorioPersona(this.gestorDeEntidad)
                                 .spGetPersona(
                                         rs.getString("rut_PERSONA")
-                                ).get(2)
+                                ).get(0)
                 );
 
                 entidad.setPkContrato(pkEntidad);
@@ -127,8 +127,8 @@ public class RepositorioContrato {
         List<?> contratos = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_CONTRATO"));
         // Encapsular los los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+     //   respuesta.add(estado);
         respuesta.addAll(contratos);
         return respuesta;
     }
@@ -158,8 +158,8 @@ public class RepositorioContrato {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+    //    respuesta.add(glosa);
+    //    respuesta.add(estado);
         return respuesta;
     }
 
@@ -197,8 +197,8 @@ public class RepositorioContrato {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+    //    respuesta.add(glosa);
+    //    respuesta.add(estado);
         return respuesta;
     }
 

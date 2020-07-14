@@ -49,8 +49,8 @@ public class RepositorioFlujoTarea {
         List<?> flujos = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_FLUJOS"));
         // Encapsular los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         flujos.forEach(flujo -> respuesta.add(flujo));
         return respuesta;
     }
@@ -78,7 +78,7 @@ public class RepositorioFlujoTarea {
                         (Tarea) new RepositorioTarea(this.gestorDeEntidad)
                                 .spGetTarea(
                                         rs.getLong("codigo_TAREA")
-                                ).get(2)
+                                ).get(0)
                 );
 
 
@@ -86,7 +86,7 @@ public class RepositorioFlujoTarea {
                         (Funcion) new RepositorioFuncion(this.gestorDeEntidad)
                                 .spGetFuncion(
                                         rs.getLong("codigo_FUNCION")
-                                ).get(2)
+                                ).get(0)
                 );
 
                 entidad.setPkFlujoTarea(pkEntidad);
@@ -130,8 +130,8 @@ public class RepositorioFlujoTarea {
         List<?> flujo = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_FLUJO_T"));
         // Encapsular los los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         respuesta.addAll(flujo);
         return respuesta;
     }
@@ -161,8 +161,8 @@ public class RepositorioFlujoTarea {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         return respuesta;
     }
 
@@ -197,8 +197,8 @@ public class RepositorioFlujoTarea {
         Object codigoSalida = consultaProcedimiento.getOutputParameterValue("OUT_INDEX_SALIDA");
         // Encapsular resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         respuesta.add(codigoSalida);
         return respuesta;
     }

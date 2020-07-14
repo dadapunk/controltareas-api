@@ -47,8 +47,8 @@ public class RepositorioAsignacion {
         List<?> asignaciones = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_ASIGNACIONES"));
         // Encapsular los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+       // respuesta.add(glosa);
+       // respuesta.add(estado);
         asignaciones.forEach(asignacion -> respuesta.add(asignacion));
         return respuesta;
     }
@@ -79,7 +79,7 @@ public class RepositorioAsignacion {
                         (Tarea) new RepositorioTarea(this.gestorDeEntidad)
                                 .spGetTarea(
                                         rs.getLong("codigo_TAREA")
-                                ).get(2)
+                                ).get(0)
                 );
 
 
@@ -88,7 +88,7 @@ public class RepositorioAsignacion {
                                 .spGetIntegrante(
                                         rs.getLong("codigo_UI"),
                                         rs.getLong("id_USUARIO")
-                                ).get(2)
+                                ).get(0)
                 );
 
                 entidad.setPkAsignacion(pkEntidad);
@@ -135,8 +135,8 @@ public class RepositorioAsignacion {
         List<?> asignacion = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_ASIGNACION"));
         // Encapsular los los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+     //   respuesta.add(estado);
         respuesta.addAll(asignacion);
         return respuesta;
     }
@@ -170,8 +170,8 @@ public class RepositorioAsignacion {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+     //   respuesta.add(estado);
         return respuesta;
     }
 
@@ -213,8 +213,8 @@ public class RepositorioAsignacion {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+     //   respuesta.add(estado);
         return respuesta;
     }
 }

@@ -49,8 +49,8 @@ public class RepositorioProyecto {
         List<?> proyectos = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_PROYECTOS"));
         // Encapsular los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+ //       respuesta.add(glosa);
+   //     respuesta.add(estado);
         proyectos.forEach(proyecto -> respuesta.add(proyecto));
         return respuesta;
     }
@@ -78,14 +78,14 @@ public class RepositorioProyecto {
 
                 fkEmpresa = new RepositorioEmpresa(this.gestorDeEntidad)
                         .spGetEmpresa(rs.getString("rut_EMPRESA"));
-                if (fkEmpresa.size() > 2)
-                    entidad.setFkEmpresa((Empresa) fkEmpresa.get(2));
+                if (fkEmpresa.size() > 0)
+                    entidad.setFkEmpresa((Empresa) fkEmpresa.get(0));
 
                 entidad.setFkAdministrador(
                         (Administrador) new RepositorioAdministrador(this.gestorDeEntidad)
                                 .spGetAdministrador(
                                         rs.getLong("id_ADMINISTRADOR")
-                                ).get(2)
+                                ).get(0)
                 );
 
                 entidad.setCreado(rs.getDate("creado"));
@@ -126,8 +126,8 @@ public class RepositorioProyecto {
         List<?> proyecto = this.obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_PROYECTO"));
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         respuesta.addAll(proyecto);
         return respuesta;
     }
@@ -155,8 +155,8 @@ public class RepositorioProyecto {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         return respuesta;
     }
 
@@ -197,8 +197,8 @@ public class RepositorioProyecto {
         Object codigoSalida = consultaProcedimiento.getOutputParameterValue("OUT_COD_SALIDA");
         // Encapsular resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         respuesta.add(codigoSalida);
         return respuesta;
     }

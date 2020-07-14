@@ -48,8 +48,8 @@ public class RepositorioEmpresa {
         List<?> empresas = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_EMPRESAS"));
         // Encapsular los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+    //    respuesta.add(glosa);
+      //  respuesta.add(estado);
         empresas.forEach(empresa -> respuesta.add(empresa));
         return respuesta;
     }
@@ -122,8 +122,8 @@ public class RepositorioEmpresa {
         List<?> empresa = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_EMPRESA"));
         // Encapsular los los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         respuesta.addAll(empresa);
         return respuesta;
     }
@@ -151,8 +151,8 @@ public class RepositorioEmpresa {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+    //    respuesta.add(glosa);
+      //  respuesta.add(estado);
         return respuesta;
     }
 
@@ -190,8 +190,8 @@ public class RepositorioEmpresa {
         Object rutSalida = consultaProcedimiento.getOutputParameterValue("OUT_ID_SALIDA");
         // Encapsular resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+      //  respuesta.add(estado);
         respuesta.add(rutSalida);
         return respuesta;
     }

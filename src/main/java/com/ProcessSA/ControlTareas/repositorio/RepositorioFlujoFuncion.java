@@ -45,8 +45,8 @@ public class RepositorioFlujoFuncion {
         List<?> flujos = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_FLUJOS"));
         // Encapsular los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+     //   respuesta.add(estado);
         flujos.forEach(flujo -> respuesta.add(flujo));
         return respuesta;
     }
@@ -126,8 +126,8 @@ public class RepositorioFlujoFuncion {
         List<?> flujo = obtener((ResultSet) consultaProcedimiento.getOutputParameterValue("OUT_FLUJO_F"));
         // Encapsular los los resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         respuesta.addAll(flujo);
         return respuesta;
     }
@@ -157,8 +157,8 @@ public class RepositorioFlujoFuncion {
         int estado = (int) consultaProcedimiento.getOutputParameterValue("OUT_ESTADO");
         // Encapsular resultado
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         return respuesta;
     }
 
@@ -193,8 +193,8 @@ public class RepositorioFlujoFuncion {
         Object codigoSalida = consultaProcedimiento.getOutputParameterValue("OUT_INDEX_SALIDA");
         // Encapsular resultados
         ArrayList respuesta = new ArrayList<>();
-        respuesta.add(glosa);
-        respuesta.add(estado);
+     //   respuesta.add(glosa);
+       // respuesta.add(estado);
         respuesta.add(codigoSalida);
         return respuesta;
     }
