@@ -74,7 +74,7 @@ public class RepositorioFlujoFuncion {
                         (Funcion) new RepositorioFuncion(this.gestorDeEntidad)
                                 .spGetFuncion(
                                         rs.getLong("codigo_FUNCION")
-                                ).get(2)
+                                ).get(0)
                 );
 
 
@@ -82,7 +82,7 @@ public class RepositorioFlujoFuncion {
                         (Proceso) new RepositorioProceso(this.gestorDeEntidad)
                                 .spGetProceso(
                                         rs.getLong("codigo_PROCESO")
-                                ).get(2)
+                                ).get(0)
                 );
 
                 entidad.setPkFlujoFuncion(pkEntidad);
